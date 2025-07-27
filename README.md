@@ -22,6 +22,8 @@ Because the per commit/evict performance worsens as more calls are made, the per
 
 All tests below were run on the same machine with the same GPU (NVIDIA L4) and the same distro+kernel (Ubuntu 24.04, kernel 6.8.0). Only the driver was changed.
 
+Kernel 6.14 was also tested but it made no difference, so those results aren't included here.
+
 #### NVIDIA driver 575.64.05
 ```
 TOTAL COMMITS: 87040
