@@ -1,6 +1,8 @@
 ## Sparse binding performance regression in NVIDIA 570/575 driver series (Linux)
 
-There is a serious performance regression with sparse binding using Vulkan or OpenGL on Linux with the NVIDIA 570/575 driver series as compared to the NVIDIA 550 driver series. In OpenGL terms, the `glTexturePageCommitmentEXT` function has become much, much slower than it used to be.
+![Results Chart](chart.png "Results Chart")
+
+There is a serious performance regression with sparse binding using Vulkan or OpenGL on Linux with the NVIDIA 555, 560, 565, 570, and 575 driver series as compared to the NVIDIA 535 and 550 driver series. In OpenGL terms, the `glTexturePageCommitmentEXT` function has become much, much slower than it used to be.
 
 This repository contains a minimal repro and results for the OpenGL issue. For a repro and results for the corresponding Vulkan issue, please see https://github.com/foijord/SparseTexture and scroll down to view the Linux charts.
 
@@ -42,6 +44,33 @@ TOTAL EVICT TIME: 85791.870631ms
 TOTAL TIME (commit + evict): 166447.408313ms
 ```
 
+#### NVIDIA driver 565.57.01
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 92757.773312ms
+TOTAL EVICT TIME: 96164.332830ms
+TOTAL TIME (commit + evict): 188922.106142ms
+```
+
+#### NVIDIA driver 560.28.03
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 97073.389938ms
+TOTAL EVICT TIME: 98100.633168ms
+TOTAL TIME (commit + evict): 195174.023106ms
+```
+
+#### NVIDIA driver 555.42.02
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 94594.364440ms
+TOTAL EVICT TIME: 98503.997579ms
+TOTAL TIME (commit + evict): 193098.362019ms
+```
+
 #### NVIDIA driver 550.163.01
 ```
 TOTAL COMMITS: 87040
@@ -60,3 +89,11 @@ TOTAL EVICT TIME: 1679.146495ms
 TOTAL TIME (commit + evict): 7277.977207ms
 ```
 
+#### NVIDIA driver 535.261.03
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 5952.291026ms
+TOTAL EVICT TIME: 1805.416670ms
+TOTAL TIME (commit + evict): 7757.707696ms
+```
