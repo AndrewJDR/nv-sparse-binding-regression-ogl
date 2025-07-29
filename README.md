@@ -97,3 +97,13 @@ TOTAL COMMIT TIME: 5952.291026ms
 TOTAL EVICT TIME: 1805.416670ms
 TOTAL TIME (commit + evict): 7757.707696ms
 ```
+
+#### Bonus round: NVIDIA RTX 5090 with driver 570.153.02
+I rented an NVIDIA GeForce RTX 5090 to run the test on in hopes of a Blackwell-only architectural improvement that mitigates the regression. Unfortunately my hopes were dashed. The regression occurs on this configuration as well:
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 52665.861477ms
+TOTAL EVICT TIME: 58093.957368ms
+TOTAL TIME (commit + evict): 110759.818845ms
+```
