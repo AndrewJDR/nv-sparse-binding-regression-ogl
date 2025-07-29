@@ -12,7 +12,7 @@ To repro:
 3. Run `./build.sh`
 4. Run `./sparse-binding-tests`
 
-Per commit\* and per evict\* timings will be printed with a summary at the end. Note that for 570/575 series drivers, the total runtime will likely be on the order of 2-3 minutes, because **The runtime of each `glTexturePageCommitmentEXT` call increases as more calls are made, reaching as high as 1.7ms per call!**
+Per commit\* and per evict\* timings will be printed with a summary at the end. Note that for 555 thru 575 series drivers, the total runtime will likely be on the order of 2-3 minutes, because **The runtime of each `glTexturePageCommitmentEXT` call increases as more calls are made, reaching as high as 1.7ms per call!**
 
 Re-run the test with 550 series driver such as 550.163.01 or 550.120. The total runtime will likely be around 5-6 seconds, because **the runtime of each `glTexturePageCommitmentEXT` call remains constantly below 0.1ms, even as more calls are made.**
 
