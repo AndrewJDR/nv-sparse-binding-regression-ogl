@@ -26,7 +26,7 @@ All tests below were run on the same machine with the same GPU (NVIDIA L4) and t
 
 Kernel 6.14 was also tested but it made no difference, so those results aren't included here.
 
-#### NVIDIA driver 575.64.05
+#### NVIDIA driver 575.64.05 (bad)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -35,7 +35,7 @@ TOTAL EVICT TIME: 83838.565101ms
 TOTAL TIME (commit + evict): 152648.691550ms
 ```
 
-#### NVIDIA driver 570.172.08
+#### NVIDIA driver 570.172.08 (bad)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -44,7 +44,7 @@ TOTAL EVICT TIME: 85791.870631ms
 TOTAL TIME (commit + evict): 166447.408313ms
 ```
 
-#### NVIDIA driver 565.57.01
+#### NVIDIA driver 565.57.01 (bad)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -53,7 +53,7 @@ TOTAL EVICT TIME: 96164.332830ms
 TOTAL TIME (commit + evict): 188922.106142ms
 ```
 
-#### NVIDIA driver 560.28.03
+#### NVIDIA driver 560.28.03 (bad)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -62,7 +62,7 @@ TOTAL EVICT TIME: 98100.633168ms
 TOTAL TIME (commit + evict): 195174.023106ms
 ```
 
-#### NVIDIA driver 555.42.02
+#### NVIDIA driver 555.42.02 (bad)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -71,7 +71,7 @@ TOTAL EVICT TIME: 98503.997579ms
 TOTAL TIME (commit + evict): 193098.362019ms
 ```
 
-#### NVIDIA driver 550.163.01
+#### NVIDIA driver 550.163.01 (good)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -80,7 +80,7 @@ TOTAL EVICT TIME: 1666.693172ms
 TOTAL TIME (commit + evict): 7298.196428ms
 ```
 
-#### NVIDIA driver 550.120
+#### NVIDIA driver 550.120 (good)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -89,7 +89,7 @@ TOTAL EVICT TIME: 1679.146495ms
 TOTAL TIME (commit + evict): 7277.977207ms
 ```
 
-#### NVIDIA driver 535.261.03
+#### NVIDIA driver 535.261.03 (good)
 ```
 TOTAL COMMITS: 87040
 TOTAL EVICTS: 87040
@@ -98,7 +98,7 @@ TOTAL EVICT TIME: 1805.416670ms
 TOTAL TIME (commit + evict): 7757.707696ms
 ```
 
-#### Bonus round: NVIDIA RTX 5090 with driver 570.153.02
+#### Bonus round: NVIDIA RTX 5090 with driver 570.153.02 (bad)
 I rented an NVIDIA GeForce RTX 5090 to run the test on in hopes of a Blackwell-only architectural improvement that mitigates the regression. Unfortunately my hopes were dashed. The regression occurs on this configuration as well:
 ```
 TOTAL COMMITS: 87040
