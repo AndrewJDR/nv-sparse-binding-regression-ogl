@@ -1,4 +1,4 @@
-## Sparse binding performance regression in NVIDIA drivers 555 -> 575 (Linux)
+## Sparse binding performance regression in NVIDIA drivers 555 thru 575 (Linux)
 
 There is a serious performance regression with sparse binding using Vulkan or OpenGL on Linux with the NVIDIA 555, 560, 565, 570, and 575 driver series as compared to the NVIDIA 535 and 550 driver series. In OpenGL terms, the `glTexturePageCommitmentEXT` function has become much, much slower than it used to be. The earliest emergence of the regression seems to have been with the 555.42.02 driver released on 2024-05-21.
 
