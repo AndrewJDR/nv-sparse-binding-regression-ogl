@@ -28,6 +28,15 @@ All tests below were run on the same machine with the same GPU (NVIDIA L4) and t
 
 Kernel 6.14 was also tested but it made no difference, so those results aren't included here.
 
+#### NVIDIA driver 580.65.06 (bad)
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 66038.959517ms
+TOTAL EVICT TIME: 80467.360948ms
+TOTAL TIME (commit + evict): 146506.320465ms
+```
+
 #### NVIDIA driver 575.64.05 (bad)
 ```
 TOTAL COMMITS: 87040
@@ -35,6 +44,15 @@ TOTAL EVICTS: 87040
 TOTAL COMMIT TIME: 68810.126449ms
 TOTAL EVICT TIME: 83838.565101ms
 TOTAL TIME (commit + evict): 152648.691550ms
+```
+
+#### NVIDIA driver 570.181 (bad)
+```
+TOTAL COMMITS: 87040
+TOTAL EVICTS: 87040
+TOTAL COMMIT TIME: 74813.817438ms
+TOTAL EVICT TIME: 76688.446890ms
+TOTAL TIME (commit + evict): 151502.264328ms
 ```
 
 #### NVIDIA driver 570.172.08 (bad)
