@@ -1,8 +1,8 @@
-## Sparse binding performance regression in NVIDIA drivers 555 thru 575 (Linux)
+## Sparse binding performance regression in NVIDIA drivers 555 thru 580 (Linux)
 
 Update 2025-08-01: This issue has been reported to NVIDIA and they have logged it as bug number `5250254`. If you have communications with NVIDIA employees regarding this issue, you can refer to this bug number. There is no information available about a fix timeline. Hopefully, they fix it soon.
 
-There is a serious performance regression with sparse binding using Vulkan or OpenGL on Linux with the NVIDIA 555, 560, 565, 570, and 575 driver series as compared to the NVIDIA 535 and 550 driver series. In OpenGL terms, the `glTexturePageCommitmentEXT` function has become much, much slower than it used to be. The earliest emergence of the regression seems to have been with the 555.42.02 driver released on 2024-05-21.
+There is a serious performance regression with sparse binding using Vulkan or OpenGL on Linux with the NVIDIA 555, 560, 565, 570, 575, and 580 driver series as compared to the NVIDIA 535 and 550 driver series. In OpenGL terms, the `glTexturePageCommitmentEXT` function has become much, much slower than it used to be. The earliest emergence of the regression seems to have been with the 555.42.02 driver released on 2024-05-21.
 
 ![Results Chart](chart.png "Results Chart")
 
@@ -14,13 +14,13 @@ To repro:
 3. Run `./build.sh`
 4. Run `./sparse-binding-tests`
 
-Per commit\* and per evict\* timings will be printed with a summary at the end. Note that for 555 thru 575 series drivers, the total runtime will likely be on the order of 2-3 minutes, because **The runtime of each `glTexturePageCommitmentEXT` call increases as more calls are made, reaching as high as 1.7ms per call!**
+Per commit\* and per evict\* timings will be printed with a summary at the end. Note that for 555 thru 580 series drivers, the total runtime will likely be on the order of 2-3 minutes, because **The runtime of each `glTexturePageCommitmentEXT` call increases as more calls are made, reaching as high as 1.7ms per call!**
 
 Re-run the test with 550 series driver such as 550.163.01 or 550.120. The total runtime will likely be around 5-6 seconds, because **the runtime of each `glTexturePageCommitmentEXT` call remains constantly below 0.1ms, even as more calls are made.**
 
 \* "commit" and "evict" in this context simply refers to calling `glTexturePageCommitmentEXT` with either `true` or `false` for the last argument, respectively.
 
-Because the per commit/evict performance worsens as more calls are made, the performance disparity between 550 and 570/575 driver grows with even larger batches. See the linux charts for the vulkan repro of this issue at https://github.com/foijord/SparseTexture for results reaching as much as 800x slower on 570 vs 550 after many bind (commit) calls are made.
+Because the per commit/evict performance worsens as more calls are made, the performance disparity between 550 and 570/575/580 driver grows with even larger batches. See the linux charts for the vulkan repro of this issue at https://github.com/foijord/SparseTexture for results reaching as much as 800x slower on 570 vs 550 after many bind (commit) calls are made.
 
 ### Summary results:
 
